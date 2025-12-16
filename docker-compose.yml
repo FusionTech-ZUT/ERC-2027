@@ -1,0 +1,32 @@
+services:
+  rover_dev:
+    # Wymuszenie platformy (zmienna z .env)
+    platform: ${PLATFORM}
+    
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        BASE_IMAGE: ${BASE_IMAGE:-osrf/ros:humble-desktop}
+    
+    image: fusiontech/rover:humble-dev
+    container_name: rover_dev
+    
+    network_mode: host
+    privileged: true
+    
+    # Te dwie linie utrzymują kontener przy życiu, gdy CMD to "bash"
+    tty: true
+    stdin_open: true
+    # -----------------------------
+    
+    volumes:
+      - ./src:/root/ros2_ws/src
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    
+    environment:
+      - DISPLAY=${DISPLAY:-}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=42
+      - ARCH=${ARCH:-x86_64}
