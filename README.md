@@ -34,7 +34,7 @@ Dzięki konteneryzacji, **nie musisz instalować ROS 2 ani bibliotek systemowych
 ### 1. Pobierz repozytorium
 
 ```Bash
-git@github.com:FusionTech-ZUT/ERC-2027.git
+git clone git@github.com:FusionTech-ZUT/ERC-2027.git
 cd ERC-2027
 ```
 
