@@ -16,3 +16,5 @@ __pycache__/
 !.vscode/tasks.json
 *.swp
 docker-compose.override.yml
+
+.DS_Store
