@@ -25,6 +25,8 @@ WORKDIR /root/ros2_ws
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+
 # 4. Ustawienie powłoki i punktu wejścia
 SHELL ["/bin/bash", "-c"]
 ENTRYPOINT ["/entrypoint.sh"]
