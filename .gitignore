@@ -1,20 +1,89 @@
-# ROS 2 & Colcon build artifacts
+# ==============================
+# ROS 2 & Colcon (Build System)
+# ==============================
+# Foldery generowane podczas kompilacji (colcon build)
 build/
 install/
 log/
-.colcon/
 
-# Python
-__pycache__/
-*.py[cod]
-*.venv
+# ==============================
+# Konfiguracja Środowiska (Critical)
+# ==============================
+# Plik generowany dynamicznie przez run.sh [cite: 22]
 .env
 
-# IDE & Docker artifacts
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================
+# C++
+# ==============================
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# ==============================
+# IDE & Edytory (VS Code, JetBrains, System)
+# ==============================
+# VS Code (Ignorujemy ustawienia lokalne użytkownika, ale zostawiamy devcontainer)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
-*.swp
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (PyCharm, CLion)
+.idea/
+
+# Mac OS (Pliki systemowe - ważne dla użytkowników Apple Silicon )
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ==============================
+# Docker (Tymczasowe pliki)
+# ==============================
+# Jeśli docker compose tworzy jakieś lokalne override'y, których nie chcemy
 docker-compose.override.yml
 
-.DS_Store
+# ==============================
+# Inne
+# ==============================
+# Logi i bazy danych generowane lokalnie (np. rosbag)
+*.log
+*.db
+*.sqlite
+
+# Wykluczenie folderów z danymi testowymi (opcjonalnie, jeśli są duże)
+# bags/
